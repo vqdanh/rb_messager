@@ -1,0 +1,40 @@
+.messages-list {
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.message{ 
+  margin: 5px 20px;
+  p {
+    padding: 10px;
+    font-size: 13px;
+    margin: 0 0 0.2rem 0;
+  }
+  time {
+    font-size: 11px;
+    color: #ccc;
+  }
+}
+
+.message-sent {
+  position: relative;
+  float: right;
+  p {
+    background-color: #D9EDF7;
+    border-color: #BCE8F1;
+  }
+  time {
+    float: right;
+  }
+}
+
+.message-received {
+  float: left;
+  p {
+    background-color: #F1F0F0;
+    border-color: #EEEEEE;
+  }
+}
+
+
