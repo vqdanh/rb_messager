@@ -7,12 +7,14 @@ class MessagesController < ApplicationController
     respond_to do |format|
       format.js
     end
-  end
 
-  def read(message_ids)
-    Message.setRead(message_ids)
-  end
+    # ActionCable.server.broadcast 'messages',
+    #   message: @message.to_json,
+    #   conversation: @conversation.id
+    # head :ok
 
+  end
+  
   private
 
   def message_params

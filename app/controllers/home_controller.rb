@@ -7,13 +7,9 @@ class HomeController < ApplicationController
     @conversations = Conversation.includes(:recipient, :messages)
                                  .find(session[:conversations])
 
-    @un_read_count = 0;
-    @conversations.each do |c|
-    	#@unReadCount += c.messages.where(is_read: false).count   
-    	urms = c.messages.where(is_read: false)
-    	if urms.present?
-    		@un_read_count += urms.size
-    	end
-    end
+    
+    unReadMessage = Conversation.getUnreadMessages(current_user)
+    @un_read_count = unReadMessage.size
+    
   end
 end

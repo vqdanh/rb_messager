@@ -6,9 +6,7 @@ class ConversationsController < ApplicationController
     add_to_conversations unless conversated?
 
     respond_to do |format|
-      puts "fuck you 1"
       format.js 
-      puts "fuck you 2"
     end 
   end
 
@@ -20,7 +18,14 @@ class ConversationsController < ApplicationController
     respond_to do |format|
       format.js
     end 
+  end
 
+  def read
+    @conversation = Conversation.find(params[:id])
+    messages = @conversation.messages.where(is_read: false).where.not(user_id: current_user.id).update_all(is_read: true)
+    puts messages.to_json
+    
+    render :json => messages.to_json
   end
 
   private

@@ -21,4 +21,18 @@ class Conversation < ApplicationRecord
   def opposed_user(user)
     user == recipient ? sender : recipient
   end
+
+  def self.getUnreadMessages(user)
+    urms = Array.new
+    conversations = where(sender_id: user.id).or(where(recipient_id: user.id))
+    return urms if !conversations.present?
+    conversations.each do |c|  
+      c.messages.each do |m|
+        if (m.user != user) && (m.is_read == false)
+          urms.push(m)
+        end
+      end
+    end
+    return urms
+  end
 end

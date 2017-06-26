@@ -1,5 +1,6 @@
 //= require jquery
 //= require rails-ujs
+//= require_tree ./channels
 (function() {
   $(document).on('click', '.toggle-window', function(e) {
     e.preventDefault();

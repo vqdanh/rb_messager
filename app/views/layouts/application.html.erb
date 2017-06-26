@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= action_cable_meta_tag %>
   </head>
 
   <body>
@@ -20,9 +21,13 @@
         </button>
         <div class="col-md-8">
           <% if user_signed_in? %>
-            <%= link_to current_user.email, edit_user_registration_path(current_user), class: "user-info col-md-6"  %>
+            <%= link_to current_user.name, edit_user_registration_path(current_user), class: "user-info col-md-6"  %>
           <% end %>
-          <a class="navbar-brand col-md-6" href="#">MESSENGER</a>
+          <a class="navbar-brand col-md-6" href="#">MESSENGER 
+            <%if @un_read_count.present? %>
+            <span class="badge badge-danger"><%= @un_read_count %></span>
+            <% end %>
+          </a>
         </div>
         
         <div class="navbar-collapse collapse">
