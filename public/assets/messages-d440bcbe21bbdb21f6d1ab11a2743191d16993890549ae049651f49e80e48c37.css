@@ -1,0 +1,47 @@
+/* line 1, /Volumes/WS/studycase/ruby/lab2/messenger/app/assets/stylesheets/messages.scss */
+.messages-list {
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* line 7, /Volumes/WS/studycase/ruby/lab2/messenger/app/assets/stylesheets/messages.scss */
+.message {
+  margin: 5px 20px;
+}
+/* line 9, /Volumes/WS/studycase/ruby/lab2/messenger/app/assets/stylesheets/messages.scss */
+.message p {
+  padding: 10px;
+  font-size: 13px;
+  margin: 0 0 0.2rem 0;
+}
+/* line 14, /Volumes/WS/studycase/ruby/lab2/messenger/app/assets/stylesheets/messages.scss */
+.message time {
+  font-size: 11px;
+  color: #ccc;
+}
+
+/* line 20, /Volumes/WS/studycase/ruby/lab2/messenger/app/assets/stylesheets/messages.scss */
+.message-sent {
+  position: relative;
+  float: right;
+}
+/* line 23, /Volumes/WS/studycase/ruby/lab2/messenger/app/assets/stylesheets/messages.scss */
+.message-sent p {
+  background-color: #D9EDF7;
+  border-color: #BCE8F1;
+}
+/* line 27, /Volumes/WS/studycase/ruby/lab2/messenger/app/assets/stylesheets/messages.scss */
+.message-sent time {
+  float: right;
+}
+
+/* line 32, /Volumes/WS/studycase/ruby/lab2/messenger/app/assets/stylesheets/messages.scss */
+.message-received {
+  float: left;
+}
+/* line 34, /Volumes/WS/studycase/ruby/lab2/messenger/app/assets/stylesheets/messages.scss */
+.message-received p {
+  background-color: #F1F0F0;
+  border-color: #EEEEEE;
+}
