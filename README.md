@@ -6,7 +6,7 @@ Submitted by: Danh Vo Quang
 
 Time spent: 48 hours
 
-URL: **Insert your Heroku URL here**
+URL: https://vqd-rb-messenger.herokuapp.com
 
 ## User Stories
 
